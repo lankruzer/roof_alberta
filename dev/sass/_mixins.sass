@@ -1,0 +1,28 @@
+@mixin btn
+  .btn
+    display: inline-block
+    padding: 15px 40px
+    margin: 10px
+    font-family: monospace
+    font-size: 20px
+    text-decoration: none
+    color: #000
+    border: 2px solid #000
+    background: #fff
+    transition: 0.25s
+    &:hover
+      background-color: rgba(0, 0, 0, 0.2)
+
+@mixin input-placeholder 
+  &.placeholder
+    @content
+  &:-moz-placeholder
+    @content
+  &::-moz-placeholder
+    @content
+  &:-ms-input-placeholder
+    @content
+  &::-webkit-input-placeholder
+    @content
+
+

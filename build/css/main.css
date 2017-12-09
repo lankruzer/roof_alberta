@@ -486,7 +486,23 @@ figure {
   clear: both;
 }
 
-input.placeholder, input:-moz-placeholder, input::-moz-placeholder, input:-ms-input-placeholder, input::-webkit-input-placeholder {
+input.placeholder {
+  color: red;
+}
+
+input:-moz-placeholder {
+  color: red;
+}
+
+input::-moz-placeholder {
+  color: red;
+}
+
+input:-ms-input-placeholder {
+  color: red;
+}
+
+input::-webkit-input-placeholder {
   color: red;
 }
 
