@@ -5,8 +5,876 @@
 @import "mixins"
 
 // Пользовательские стили
-input
-	@include input-placeholder 
-		color: red
 
+// header //
+.header
+  position: fixed
+  z-index: 10
+  display: flex
+  justify-content: space-between
+  align-items: center
+  background-color: #fff
+  border-bottom: 2px solid #ee2424
+  width: 100%
+  
+.header-logo
+  display: flex
+  align-items: center
+  margin:
+    left: 70px
+  text-decoration: none
+  &__img
+    margin-right: 20px
+    max-width: 50px
+    width: 100%
+    height: auto
+  &__span
+    @include font($family: corbel, $size: 30px, $font-weight: 700, $color: #ee2424)
+      text-transform: uppercase
+    
+.header-menu
+  display: flex
+  margin:
+    left: auto
+    top: 0
+    right: 195px
+    bottom: 0
+  box-sizing: border-box
+  list-style: none
+  &__link
+    display: block
+    padding: 30px 17px
+    box-sizing: border-box
+    @include font($family: corbel, $size: 22px, $line-height: normal, $font-weight: 400, $color: #010101)
+      text-transform: uppercase
+    @include link()
+    cursor: pointer
+  .active
+    .header-menu__link
+      color: #ee2424
+  
+.btn_transparent
+  @include btn-red
+    
+.header-callback
+  position: relative
+  padding: 24px 66px 25px 56px
+  box-sizing: border-box
+  background-color: #ff2828
+  &::before
+    @include pseudo-absolute($top: 0, $left: auto, $width: 0, $height: 0)
+      right: 100%
+      border-top: 90px solid #ff2828
+      border-left: 90px solid transparent
+  .btn-mobile-menu
+    display: none
+    
+.lines
+  position: relative
+  display: inline-block
+  vertical-align: middle
+  margin-top: -2px
+  margin-left: 5px
+  width: 15px
+  height: 2px
+  background-color: #fff
+  transition: 0.5s
+  &::before
+    @include pseudo-absolute($top: -5px, $width: 100%, $height: 100%)
+      background-color: #fff
+      transition: 0.5s
+  &::after
+    @include pseudo-absolute($top: auto, $width: 100%, $height: 100%)
+      bottom: -5px
+      background-color: #fff
+      transition: 0.5s
+    
+.active .lines
+  background-color: transparent
+  &::before
+    transform: translate(0, 5px) rotate(45deg)
+  &::after
+    transform: translate(0, -5px) rotate(-45deg)
+// /header //
+
+
+// index-page main-screen //
+.main-screen
+  position: relative
+  &__title
+    position: absolute
+    top: 130px
+    left: 130px
+    z-index: 5
+  &__h1
+    margin: 0 0 15px
+    @include font($size: 36px, $font-weight: 700, $color: #000000)
+  &__h2
+    margin: 0
+    @include font($size: 24px, $color: #720000)
+  &__logos
+    position: absolute
+    top: 130px
+    right: 65px
+    z-index: 5
+  &__logo
+    display: block
+    margin-bottom: 20px
+    width: 160px
+    height: auto
+  &__logo:last-of-type
+    margin-bottom: 0
+    
+// /index-page main-screen //
+
+// index-page-swiper //
+.main-page-swiper
+  position: relative
+  z-index: 1
+  width: 100%
+  height: 100vh
+  overflow: hidden
+  &__slide
+    position: relative
+  &__img
+    position: absolute
+    top: 50%
+    left: 50%
+    width: auto
+    height: auto
+    max-width: none
+    min-width: 100%
+    min-height: 100vh
+    transform: translate(-50%, -50%) scale(1)
+  .swiper-slide-active img
+    animation-name: scale-img
+    animation-duration: 5s
+  
+.main-screen-form
+  position: absolute
+  bottom: 0
+  left: 0
+  z-index: 5
+  padding: 35px 15px 65px
+  width: 100%
+  box-sizing: border-box
+  text-align: center
+  background-color: rgba(0, 0, 0, 0.6)
+  &__title
+    margin-bottom: 30px
+    @include font ($family: corbel, $size: 24px, $color: #fff)
+  &__input
+    @include input-transparent
+    margin-right: 80px
+    width: 255px
+    @include input-placeholder
+      color: rgba(255, 255, 255, 0.75)
+  &__button
+    @include btn-red
+    min-height: 43px
+// /index-page-swiper //
+
+// index-page-advantages //
+.screen-advantages
+  position: relative
+  margin-bottom: 30px
+  padding: 45px 0 15px
+  overflow: hidden
+  &::before
+    @include pseudo-absolute($top: 0, $left: 0, $width: 36%, $height: 100%)  
+    z-index: -1
+    background-color: #2e2e2e
+  &::after
+    @include pseudo-absolute($top: auto, $left: 0, $width: 60%, $height: 200%)
+    bottom: 0
+    z-index: -1
+    background-color: #2e2e2e
+    transform: rotate(-45deg)
+  .container
+    display: flex
+  &__col
+    width: 50%
+  &__title
+    width: 100%
+    margin: 0 0 25px
+    text-align: right
+    @include font($size: 36px, $font-weight: 700, $color: #fff)
+    text-transform: uppercase
+  &__list
+    margin: 0
+    padding: 0
+    max-width: 478px
+    list-style: none
+    .screen-advantages__list
+      padding-top: 20px
+      column-count: 2
+    
+.screen-advantages__span-red
+  color: #ee2424
+.screen-advantages__span-dark-red
+  color: #720000
+      
+.screen-advantages__list
+  .screen-advantages__li
+    margin-bottom: 20px
+    width: 100%
+    @include font($size: 18px, $color: #fff) 
+    &::before
+      content: ''
+      display: inline-block
+      vertical-align: middle
+      margin-right: 5px
+      width: 8px
+      height: 8px
+      background-color: #ff1f1f
+      border-radius: 50%
+
+.advantages-list-hor
+  display: flex
+  justify-content: flex-end
+  margin: 0
+  padding: 0
+  min-height: 255px
+  list-style: none
+  &__li:nth-of-type(odd)
+    align-self: flex-end
+  &__li
+    text-align: center
+  &__icon
+    margin-bottom: 10px
+  &__bold
+    font-size: 18px
+    font-weight: 700
+    color: #720000
+  &__text
+    margin: 0
+    font-size: 18px
+    color: #2e2e2e
+    
+// /index-page-advantages //
+  
+// index-page steps //
+.block-steps
+  &__title
+    margin: 0 0 20px
+    padding: 45px 0
+    text-align: center
+    @include font($size: 30px, $font-weight: 700, $color: $black)
+    text-transform: uppercase
+    background-color: $light-gray
+  &__steps
+    padding: 20px 0
+    background-color: $light-gray
+
+.steps-list
+  display: flex
+  margin: 0
+  padding: 0
+  list-style: none
+  &__li
+    flex: 1
+    margin-right: 15px
+    box-sizing: border-box
+  &__li:last-of-type
+    flex: 1.4
+    margin-right: 0
+  &__title
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-bottom: 30px
+    min-height: 50px
+    box-sizing: border-box
+    text-align: center
+    @include font($size: 18px, $font-weight: 700, $color: #fff)
+    background-color: $red
+    &::before
+      @include pseudo-absolute($top: 0, $left: 0, $width: 0, $height: 0)
+      border-top: 25px solid transparent;
+      border-bottom: 25px solid transparent;
+      border-left: 25px solid $light-gray;
+    &::after
+      @include pseudo-absolute($top: 0, $left: 100%, $width: 0, $height: 0)
+      z-index: 1
+      border-top: 25px solid transparent;
+      border-bottom: 25px solid transparent;
+      border-left: 25px solid $red;
+  &__li:first-of-type .steps-list__title::before
+    display: none
+  &__li:last-of-type 
+    .steps-list__title::after
+      display: none
+    .steps-list__title
+      margin-bottom: 10px
+      padding: 0 20px
+      font-size: 16px
+      text-transform: uppercase
+      background-color: $dark-gray
+  &__text
+    margin: 0 0 15px
+    padding-right: 10px
+    box-sizing: border-box
+    @include font($size: 16px, $font-weight: 700, $color: #2e2e2e)
+      
+.block-steps
+  position: relative
+  margin-bottom: 130px
+  &__form
+    padding: 25px 45px 45px
+    width: 100%
+    box-sizing: border-box
+    border-left: 2px solid #fff
+    background-color: $gray
+    .important-label
+      display: block
+      margin-bottom: 20px
+      .overlay-form__input
+        @include input-white
+        padding: 5px
+      &__icon
+        display: flex
+        align-items: center
+        width: 20px
+  &__input,
+  &__textarea
+    margin-bottom: 20px
+    @include input-white
+    width: 100%
+    box-sizing: border-box
+  &__textarea
+    margin-bottom: 25px
+    min-height: 70px
+    resize: none
+  &__button
+    width: 100%
+    @include btn-small-red
+    font-size: 16px
+  &__bold
+    position: absolute
+    left: 50%
+    bottom: 55px
+    @include font($size: 36px, $font-weight: 700, $color: $dark-red)
+    text-transform: uppercase
+    transform: translateX(-50%)
+    
+
+.important-label__info.important-label__info_no-transparent
+  background: #fff
+// /index-page steps //
+
+// index-page block-trends //
+.block-title
+  margin: 0 0 50px
+  text-align: center
+  @include font($family: corbel, $size: 48px, $font-weight: 700, $color: $black)
+  text-transform: uppercase
+  &__gray
+    font-weight: 400
+    color: #8c8c8c
+  &__red
+    color: $red
+  &__dark-red
+    color: $dark-red
+  
+.block-trends
+  margin: 0 auto 100px
+  &__list
+    display: flex
+    flex-wrap: wrap
+    margin: 0 0 0 auto
+    padding: 0
+    width: 85%
+    list-style: none
+  &__li
+    display: flex
+    align-items: center
+    margin-bottom: 30px
+    width: 50%
+    min-height: 70px
+    font-size: 26px
+    &:last-of-type
+      margin: 0 auto
+      font-size: 30px
+      color: $dark-red
+  &__icon
+    margin-right: 15px
+    width: 70px
+    height: auto
+    img
+      width: 100%
+      height: auto
+// /index-page block-trends //
+
+// index-page parralax-form //
+.parallax-form
+  min-height: 768px
+  background-color: transparent
+  .container
+    display: flex
+    justify-content: center
+    align-items: center
+    min-height: 768px
+    
+.form
+  width: 460px
+  box-sizing: border-box
+  border: 3px solid transparent
+  border-image: linear-gradient( 180deg, rgba(255, 255, 255, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%) 3
+  &__border
+    position: relative
+    padding: 30px 50px 40px
+    &::before
+      z-index: 1
+      @include pseudo-absolute($top: 0, $left: 0, $width: 100%, $height: 100%)
+      background-image: linear-gradient( 180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 40, 0, 0.4) 100%)
+      opacity: 0.8
+  &__title
+    position: relative
+    z-index: 2
+    margin-bottom: 20px
+    text-align: center
+    @include font($size: 30px, $font-weight: 700, $color: #fff)
+    text-transform: uppercase
+  &__input,
+  &__textarea
+    position: relative
+    z-index: 2
+    display: block
+    @include input-white
+    margin-bottom: 22px
+    width: 100%
+    min-height: 52px
+    box-sizing: border-box
+    font-size: 18px
+  .important-label
+    position: relative
+    z-index: 2
+    display: block
+    width: 100%
+    margin-bottom: 22px
+  &__textarea
+    margin-bottom: 25px
+    min-height: 130px
+    resize: none
+  &__button
+    position: relative
+    z-index: 2
+    @include btn-big-red
+    width: 100%
+// /index-page parralax-form //
+
+// index-page reviews //
+.block-reviews
+  padding-top: 80px
+  margin-bottom: 80px
+  background-color: #fff
+.swiper-reviews
+  .swiper-wrapper
+    height: auto
+  .swiper-slide
+    width: 50%
+    text-align: center
+    img
+      margin: 0 auto
+      width: 80%
+      height: auto
+      max-width: inherit
+.block-reviews__link
+  padding: 30px 5% 30px 0
+  text-align: right
+  a
+    @include font($size: 18px, $font-weight: 700, $color: $dark-gray)
+    @include link($decoration: none, $hover-color: $dark-red, $hover-decoration: none)
+.swiper-pagination-bullet
+  width: 10px
+  height: 10px
+  transition: 0.25s
+  &.swiper-pagination-bullet-active
+    background-color: $dark-red
+// /index-page reviews //
+
+// index-page gallery //
+.block-gallery
+  margin-bottom: 100px
+.block-gallery__slides
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+.gallery-big-img
+  margin: 0 0 15px
+  width: 73%
+  height: 750px
+  .swiper-slide
+    position: relative
+    width: 100%
+    height: 100%
+    overflow: hidden
+  img
+    position: absolute
+    top: 50%
+    left: 50%
+    max-width: inherit
+    max-height: inherit
+    min-width: 100%
+    min-height: 100%
+    width: auto
+    height: auto
+    transform: translate(-50%, -50%)
+.gallery-small-img
+  position: relative
+  margin: 0
+  width: 25%
+  height: 750px
+  .swiper-slide
+    position: relative
+    width: 100%
+    //height: 175px
+    overflow: hidden
+  img
+    position: absolute
+    top: 50%
+    left: 50%
+    max-width: inherit
+    max-height: inherit
+    min-width: 100%
+    min-height: 100%
+    width: auto
+    height: auto
+    transform: translate(-50%, -50%)
+  .swiper-button-white
+    position: absolute
+    top: auto
+    left: auto
+    right: auto
+    bottom: auto 
+    z-index: 5
+    padding: 0
+    margin: 0
+    width: 100%
+    height: 85px
+    background-color: rgba(0, 0, 0, 0.8)
+    background-image: none
+    transition: 0.5s
+    cursor: pointer
+    &.swiper-button-next
+      top: auto
+      bottom: 0
+      left: 0
+      &::before
+        @include pseudo-absolute($top: 30%, $left: 50%, $width: 50px, $height: 50px)
+        border: 8px solid #fff
+        border-top: 0
+        border-left: 0
+        border-radius: 4px
+        transform: translate(-50%, -50%) rotate(45deg)
+        transition: 0.25s
+      &:hover::before
+        border-color: $red
+    &.swiper-button-prev
+      bottom: auto
+      top: 0
+      left: 0
+      &::before
+        @include pseudo-absolute($top: auto, $left: 50%, $width: 50px, $height: 50px)
+        bottom: 0%
+        border: 8px solid #fff
+        border-bottom: 0
+        border-left: 0
+        border-radius: 4px
+        transform: translate(-50%, 0) rotate(-45deg)
+        transition: 0.25s
+      &:hover::before
+        border-color: $red
+.gallery-info
+  padding-bottom: 15px
+  width: 100%
+  .swiper-slide
+    padding-left: 40px
+    width: 100%
+    box-sizing: border-box
+  &__title
+    margin: 0 0 5px
+    @include font($size: 18px, $font-weight: 400, $color: $dark-red)
+  &__style,
+  &__color,
+  &__comment
+    margin-bottom: 5px
+    @include font($size: 18px, $font-weight: 400, $color: #404040)
+  &__comment
+    margin-bottom: 15px
+.color-dark-red
+  color: $dark-red
+// /index-page gallery //
+
+// index-page block-videos //
+.block-videos
+  margin-bottom: 60px
+  .container
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+  &__video
+    margin-bottom: 50px
+    width: 47%
+  &__video-wrapper
+    position: relative
+    padding-bottom: 56.25%
+    padding-top: 25px
+    height: 0
+    iframe
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+  &__title
+    margin: 0
+    width: 100%
+    text-align: center
+    @include font($size: 18px, $font-weight: 700, $color: #404040)
+    text-transform: uppercase
+// / index-page block-videos //
+
+// index-page block-about //
+.block-about
+  text-align: center
+  .container
+    position: relative
+    padding-top: 190px
+    padding-bottom: 70px
+    &::before
+      @include pseudo-absolute($top: 0, $left: 15px, $width: 300px, $height: 230px)
+      background-image: url('../img/about-bg.png')
+      background-size: contain
+      background-repeat: no-repeat
+      background-position: top left
+    &::after
+      @include pseudo-absolute($top: auto, $left: auto, $width: 300px, $height: 230px)
+      right: 15px
+      bottom: -108px
+      background-image: url('../img/about-bg.png')
+      background-size: contain
+      background-repeat: no-repeat
+      background-position: top left
+      transform: rotate(180deg)
+    p
+      margin: 0 auto 20px
+      width: 80%
+// /index-page block-about //
+
+// index-page footer  //
+.footer-contacts
+  padding: 165px 0 95px
+  background-color: $light-gray
+  background-image: url('../img/footer-img.jpg')
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  .container
+    display: flex
+    justify-content: center
+  &__cols
+    display: flex
+    justify-content: space-between
+    padding: 35px 55px 25px 25px
+    box-sizing: border-box
+    border: 3px solid rgba(0, 0, 0, 0.8)
+    background-color: rgba(255, 255, 255, 0.7)
+  &__contact
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding-right: 40px
+    width: 60%
+    box-sizing: border-box
+  &__form
+    width: 40%
+    box-sizing: border-box
+    .form
+      &__input,
+      &__textarea
+        border-color: #000
+        &:hover,
+        &:active,
+        &:focus
+          border-color: $red
+.form.form_footer
+  padding: 0
+  border: 0
+  width: 100%
+  .form__border
+    padding: 0
+    &::before
+      display: none
+  .form__title
+    color: #404040
+
+.footer-logo
+  display: block
+  margin-bottom: 35px
+  text-align: center
+  text-decoration: none
+  &__img
+    margin-bottom: 15px
+  &__span
+    @include font($family: corbel, $size: 36px, $font-weight: 700, $color: $red)
+    text-transform: uppercase
+.footer-contact__link
+  display: block
+  margin-bottom: 5px
+  @include font($size: 30px, $color: $dark-red)
+  @include link()
+  &:last-of-type
+    margin-bottom: 90px
+  
+.footer-soc
+  display: flex
+  justify-content: center
+  align-items: center
+  list-style: none
+  margin: 0
+  padding: 0
+  &__link 
+    margin: 0 15px 15px
+    a
+      text-decoration: none
+  &__privacy
+    @include font($size: 16px, $color: $black)
+    @include link($decoration: underline)
+
+.footer-dev
+  padding: 50px 0 70px
+  background-color: $dark-gray
+  text-align: center
+  color: #fff
+  &__link
+    @include link($decoration: underline, $hover-decoration: underline)
+    color: #fff
+// / index-page footer  //
+
+
+// popup's //
+.overlay
+  position: fixed
+  top: 0
+  left: 0
+  z-index: -1
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 100%
+  background-color: rgba(0, 0, 0, 0.25)
+  visibility: hidden
+  opacity: 0
+  transition: 0.5s
+  &.active
+    z-index: 20
+    visibility: visible
+    opacity: 1
+    
+.overlay-form
+  position: relative
+  display: flex
+  flex-direction: column
+  padding: 60px 50px 40px
+  width: 460px
+  background-color: #fff
+  border: 1px solid #e1e1e1
+  &__title
+    margin: 0 0 40px
+    text-align: center
+    @include font($size: 18px, $color: #010101)
+    text-transform: uppercase
+  &__input,
+  &__textarea
+    margin-bottom: 22px
+    @include input
+  &__textarea
+    margin-bottom: 25px
+    min-height: 130px
+    resize: none
+  &__button
+    @include btn-big-red
+    width: 100%
+
+.overlay-close
+  position: absolute
+  top: 15px
+  right: 15px
+  width: 30px
+  height: 30px
+  font-size: 0
+  border: 0
+  box-shadow: none
+  background-color: transparent
+  cursor: pointer
+  outline: none
+  &::before
+    @include pseudo-absolute($top: 46%, $left: 0, $width: 35px, $height: 2px)
+      background-color: #6c6c6c
+      transform: rotate(45deg)
+      transition: 0.5s
+  &::after
+    @include pseudo-absolute($top: auto, $left: 0, $width: 35px, $height: 2px)
+      bottom: 46%
+      background-color: #6c6c6c
+      transform: rotate(-45deg)
+      transition: 0.5s
+  &:hover::before,
+  &:hover::after
+    background-color: #ee2424
+
+.important-label
+  position: relative
+  margin-bottom: 22px
+  input
+    margin-bottom: 0
+  &__info
+    position: absolute
+    top: 50%;
+    right: calc(100% + 65px)
+    padding: 10px 5px
+    width: 255px
+    box-sizing: border-box
+    background-color: rgba(254, 254, 254, 0.8)
+    @include font($size: 18px, $color: #000000)
+    text-align: center
+    transform: translateY(-50%)
+    visibility: hidden
+    opacity: 0
+    transition: 0.5s
+    &::before
+      @include pseudo-absolute($top: 50%, $left: 100%, $width: 0, $height: 0)
+      border:
+        top: 10px solid transparent
+        bottom: 10px solid transparent
+        left: 10px solid rgba(254, 254, 254, 0.8)
+      transform: translateY(-50%)
+  &__icon
+    position: absolute
+    top: 50%
+    right: calc(100% + 11px)
+    width: 28px
+    height: 28px
+    img
+      width: 100%
+      height: auto
+    transform: translateY(-50%)
+  &:hover
+    .important-label__info
+      visibility: visible
+      opacity: 1
+// /popup's //
+      
+  
+  
 @import "media" // Всегда в конце
+
+
+@keyframes scale-img
+  0%
+    transform: translate(-50%, -50%) scale(1)
+  100%
+    transform: translate(-50%, -50%) scale(1.05)

@@ -1,58 +1,781 @@
 @import "vars"
 
 /*==========  Desktop First  ==========*/
+@media only screen and (max-width : 1850px)
+  .screen-advantages::after
+    width: 56%
+
+
+@media only screen and (max-width : 1750px)
+  .header-menu
+    margin-right: 120px
+
+@media only screen and (max-width : 1600px)
+  .header-logo
+    margin-left: 15px
+    &__img
+      margin-right: 10px
+    &__span
+      font-size: 22px
+  .header-menu
+    margin-right: 100px
+  .screen-advantages::after
+    width: 52%
+    
+@media only screen and (max-width : 1500px)
+  .header-menu__link
+    padding: 20px 13px
+  .header-callback
+    padding:
+      left: 40px
+      top: 14px
+      right: 40px
+      bottom: 15px
+    &::before
+      border-top: 70px solid #ff2828
+      border-left: 70px solid transparent
+  .screen-advantages::after
+    width: 101%
+    height: 100%
+    left: -20%
+    
+@media only screen and (max-width : 1450px)
+  .header-logo
+    &__img
+      max-width: 40px
+    &__link
+    font-size: 20px
+  .header-callback
+    padding:
+      left: 25px
+      right: 25px
+      
+@media only screen and (max-width : 1400px)
+  .screen-advantages::before
+    width: 33%
+  .screen-advantages::after
+    width: 100%
+    height: 100%
+    left: -22%
+  
+@media only screen and (max-width : 1350px)
+  .header-logo__span
+    font-size: 20px
+  .header-menu__link
+    font-size: 18px
+      
+@media only screen and (max-width : 1300px)
+  .header-logo__img
+    margin-right: 5px
+    
+@media only screen and (max-width : 1250px)
+  .header-menu
+    margin-right: 70px
+    &__link
+      padding: 15px 10px
+  .header-callback
+    padding: 10px 15px 10px 5px
+    &::before
+      border-top: 56px solid #ff2828
+      border-left: 56px solid transparent
+    .btn_transparent
+      padding: 5px 10px
+      
+  .screen-advantages::before
+    width: 32%
+  .screen-advantages::after
+    width: 100%
+    height: 100%
+    left: -24%
+    
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
-	.container 
-		width: 970px
-
+  .overlay-form
+    width: 400px
+    
+  .screen-advantages::before
+    width: 32%
+  .screen-advantages::after
+    width: 100%
+    height: 100%
+    left: -20%
+  .screen-advantages__col:first-of-type .screen-advantages__title
+    text-align: left
+  .screen-advantages__title
+    margin-bottom: 10px
+    font-size: 26px
+  .screen-advantages__list
+    .screen-advantages__list
+      padding-top: 10px
+    .screen-advantages__li
+      max-width: 430px
+      margin-bottom: 10px
+      font-size: 16px
+  .advantages-list-hor
+    min-height: 210px
+    &__icon
+      margin: 0 auto 5px
+      max-width: 90px
+    &__bold
+      font-size: 16px
+    &__text
+      font-size: 16px
+      
+  .container 
+    width: 970px
+    
+  .block-steps
+    margin-bottom: 100px
+    &__title
+      font-size: 28px
+    &__form
+      padding: 15px 25px 30px
+      .important-label
+        &__icon
+          right: calc(100% + 6px)
+          width: 15px
+        &__info
+          right: calc(100% + 45px)
+    &__input
+      margin-bottom: 15px
+    &__textarea
+      margin-bottom: 20px
+    &__bold
+      font-size: 30px
+    
+  .steps-list__title
+    margin-bottom: 20px
+    font-size: 14px
+  .steps-list
+    &__li:last-of-type .steps-list__title
+      font-size: 14px
+    &__text
+      margin-bottom: 10px
+      font-size: 15px
+      
+  .block-title
+    margin-bottom: 40px
+    font-size: 34px
+  .block-trends
+    &__li
+      margin-bottom: 20px
+      font-size: 24px
+    &__li:last-of-type
+      font-size: 26px
+  
+  .block-gallery
+    margin-bottom: 80px
+  .gallery-big-img
+    height: 700px
+  .gallery-small-img
+    height: 700px
+          
+  .block-about .container
+    padding-top: 140px
+          
+@media only screen and (max-width : 1100px)
+  .header-logo__span
+    font-size: 16px
+  .header-menu
+    margin-right: 45px
+    &__link
+      padding: 15px 10px
+      font-size: 16px
+  .header-callback
+    padding-right: 10px
+    padding-left: 10px
+    
+  .overlay
+    padding: 50px 0
+    box-sizing: border-box
+    overflow: auto
+  .overlay-form
+    margin-bottom: 50px
+    transform: translateY(15%)
+  .important-label__info
+    width: 200px
+   
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	.container
-		width: 750px
+  .header-menu
+    position: absolute
+    top: 0
+    left: 0
+    display: none
+    padding: 0
+    width: 100%
+    background-color: #fff
+    &__link
+      padding-left: 35px
+      padding-top: 20px
+  .header-callback
+    display: flex
+    &::before
+      display: block
+    .btn-mobile-menu
+      display: block
+      margin-right: 10px
+      
+  .screen-advantages::before
+    width: 50%
+  .screen-advantages::after
+    display: none    
+  .screen-advantages
+    &__col
+      box-sizing: border-box
+      &:first-of-type
+        padding-right: 15px
+      &:last-of-type
+        padding-left: 15px
+    &__title
+      font-size: 24px
+    &__list .screen-advantages__list
+      column-count: 1
+  .advantages-list-hor
+    flex-wrap: wrap
+    &__li
+      margin-bottom: 15px
+      padding: 0 5px
+      width: 50%
+      box-sizing: border-box
+    &__icon
+      max-width: 75px
+      
+  .overlay-form
+    margin-bottom: 50px
+    padding: 20px 35px 20px
+    transform: translateY(150px)
+    &__title
+      margin-bottom: 25px
+  .important-label
+    &__icon
+      position: static
+      display: inline-block
+      vertical-align: middle
+      margin-right: 5px
+      transform: translate(0, 0)
+    &__info
+      position: static
+      display: inline-block
+      vertical-align: middle
+      margin-bottom: 5px
+      padding: 0
+      width: calc(100% - 38px)
+      text-align: left
+      font-size: 17px
+      color: lighten(#000, 40%)
+      transform: translate(0, 0)
+      visibility: visible
+      opacity: 1
+      &::before
+        display: none
+    
+  .main-screen
+    &__title
+      left: 70px
+    &__h1
+      margin-bottom: 10px
+    &__logos
+      right: 30px
+    &__logo
+      width: 130px
+      margin-bottom: 10px
+  .main-screen-form
+    padding: 25px 15px 45px;
+    &__input
+      margin-right: 15px
+    
+  .container
+    width: 750px
 
+  .block-steps
+    margin-bottom: 70px
+    &__title
+      margin-bottom: 30px
+      padding: 30px 0
+      font-size: 20px
+    &__bold
+      position: static
+      margin: 0 0 30px
+      width: 100%
+      text-align: center
+      font-size: 28px
+      transform: translate(0, 0)
+    &__form 
+      .important-label__icon
+        display: inline-block
+        width: 28px
+      .important-label .important-label__info
+        font-size: 16px
+        background-color: transparent
+        color: #000
+  
+  .steps-list
+    flex-wrap: wrap
+    &__li
+      flex: none
+      margin-bottom: 30px
+      width: calc(50% - 15px)
+    &__title
+      margin-bottom: 15px
 
+    
+  .block_title
+    margin-bottom: 30px
+  .block-trends
+    margin-bottom: 70px
+    &__list
+      //width: 100%
+    &__li
+      min-height: 50px
+      font-size: 20px
+    &__li:last-of-type
+      font-size: 20px
+    &__icon
+      width: 50px
+  
+  .form .important-label__info
+    color: #eeecec
+    background-color: transparent
+    
+  .block-reviews
+    padding-top: 60px
+    margin-bottom: 60px
+  
+  .block-reviews__link
+    padding: 20px 5% 20px 0
+    
+  .gallery-big-img
+    height: 400px
+  .gallery-small-img
+    height: 400px
+    .swiper-button-white
+      height: 65px
+      &.swiper-button-next::before,
+      &.swiper-button-prev::before
+        width: 30px
+        height: 30px
+        border-width: 6px
+  .gallery-info .swiper-slide
+    padding-left: 0
+  
+  .block-gallery
+    margin-bottom: 60px
+  .block-videos
+    &__video
+      margin-bottom: 30px
+      width: 48%
+    &__title
+      font-size: 16px
+      
+  .block-about .container
+    padding-top: 100px
+    padding-bottom: 40px
+    &::before
+      width: 210px
+    &::after
+      bottom: -75px
+      width: 210px
+    
+  .footer-contacts
+    padding: 125px 0 50px
+    &__cols
+      flex-wrap: wrap
+      padding: 35px 35px 20px 35px
+    &__contact
+      margin: 0 0 60px
+      padding: 0
+      width: 100%
+    &__form
+      width: 100%
+      .important-label__info
+        color: #000  
+  .footer-contact__link
+    font-size: 24px
+    &:last-of-type
+      margin-bottom: 45px
+    
+  .footer-logo
+    margin-bottom: 20px
+    &__img
+      margin-bottom: 10px
+      
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-	.container 
-		width: 100%
+  .header-logo
+    margin-left: 10px
+  
+  .main-screen
+    &__title
+      top: 100px
+      left: 15px
+    &__logos
+      top: 100px
+      right: 15px
+  .main-screen-form
+    padding: 10px 10px 20px
+    &__title
+      margin-bottom: 10px
+      font-size: 22px
+    &__input
+      margin-bottom: 10px
+      width: 230px
+  
+  .screen-advantages 
+    &::before
+      display: none
+    .container
+      flex-wrap: wrap
+    &__col
+      width: 100%
+    &__col:first-of-type
+      position: relative
+      &::before
+        @include pseudo-absolute($top: auto, $left: 50%, $width: 200%, $height: 200%)
+          bottom: 0
+          z-index: -1
+          background-color: #2e2e2e
+          transform: translateX(-50%)
+      margin-bottom: 20px
+      padding: 0 0 20px
+    &__col:last-of-type
+      padding: 25px 0 0
+    &__title
+      margin-bottom: 15px
+      text-align: left
+    &__list 
+      .screen-advantages__list
+        padding-top: 15px
+        column-count: 2
+      .screen-advantages__li
+        max-width: inherit
+        margin-bottom: 15px
+    .advantages-list-hor
+      justify-content: space-between
+      &__li
+        padding: 0
+        width: 48%
+        text-align: left
+      &__icon
+        margin: 0 0 10px
+      
+  .container 
+    width: 100%
 
+  .block-steps
+    margin-bottom: 50px
+    &__title
+      margin-bottom: 10px
+      padding: 15px 0
+      font-size: 18px
+      
+  .block-title
+    margin-bottom: 20px
+    font-size: 28px
+    
+  .block-trends
+    margin-bottom: 50px
+    &__list
+      width: 100%
+    &__li,
+    &__li:last-of-type
+      margin-bottom: 10px
+      min-height: 40px
+      font-size: 18px
+    &__icon
+      width: 40px
+      
+  .parallax-form
+    padding: 50px 0
+    min-height: inherit
+    .container
+      min-height: inherit
+  .form
+    &__border
+      padding: 30px
+    &__title
+      margin-bottom: 15px
+      font-size: 24px
+    &__input
+      min-height: 40px
+      margin-bottom: 10px
+    .important-label 
+      margin-bottom: 10px
+      .form__input
+        margin-bottom: 0
+    &__textarea
+      margin-bottom: 15px
+      min-height: 100px
+    &__button
+      font-size: 22px
+      
+  .block-reviews
+    padding-top: 40px
+    margin-bottom: 40px
+  .swiper-reviews .swiper-slide img
+    width: 94%
+  .block-reviews__link
+    padding: 20px 3% 30px 0
+    
+  .gallery-big-img
+    height: 300px
+  .gallery-small-img
+    height: 300px
+    .swiper-button-white
+      height: 65px
+      &.swiper-button-next::before,
+        top: 45%
+        width: 20px
+        height: 20px
+        border-width: 4px
+      &.swiper-button-prev::before
+        top: 45%
+        width: 20px
+        height: 20px
+        border-width: 4px
 
+  .block-videos
+    margin-bottom: 40px
+    &__video
+      margin-bottom: 20px
+      width: 49%
+    &__title
+      font-size: 14px
+      
+  .block-about .container
+    &::before
+      width: 180px
+    &::after
+      bottom: -65px
+      width: 180px
+    p
+      width: 100%
+      
+  .footer-logo__span
+    font-size: 30px
+        
+@media only screen and (max-width : 560px)
+  .header-callback
+    padding: 8px 5px
+    &::before
+      border-top: 52px solid #ff2828
+      border-left: 30px solid transparent
+    .btn_transparent
+      padding: 5px
+    
+  .overlay-form
+    width: calc(100% - 30px)
+    box-sizing: border-box
+    &__title
+      margin: 0 auto 20px
+      width: 90%
+      
+  .main-page-swiper
+    position: absolute 
+    max-height: 350px
+  .main-screen
+    &__title
+      position: relative
+      top: inherit
+      left: inherit
+      padding: 80px 15px 30px
+    &__h1
+      margin-bottom: 5px
+      font-size: 30px
+    &__h2
+      font-size: 22px
+    &__logos  
+      position: relative
+      top: inherit
+      left: inherit
+      right: inherit
+      padding: 0 15px 20px
+    &__logo
+      display: inline-block
+      vertical-align: top
+      margin-right: 10px
+  .main-screen-form
+    position: relative
+    top: inherit
+    left: inherit
+    right: inherit
+    bottom: inherit
+    z-index: 5
+    padding: 20px 15px 20px
+    text-align: left
+    background-color: #404040
+    &__title
+      font-size: 20px
+    &__input
+      display: block
+      
+  .block-title
+    margin-bottom: 20px
+    font-size: 24px
+    
+  .block-steps
+    margin-bottom: 40px
+    &__bold
+      margin-bottom: 10px
+      font-size: 20px
+    
+  .block-trends
+    margin-bottom: 40px
+    &__list
+      width: 100%
+    &__li,
+    &__li:last-of-type
+      width: 100%
+      margin-bottom: 10px
+      min-height: 40px
+      font-size: 18px
+    &__icon
+      width: 40px
+      
+  .form
+    width: 100%
+    &__border
+      padding: 15px  
+    &__title
+      font-size: 20px
+    &__button
+      font-size: 18px
+  
+  .block-reviews
+    padding-top: 30px
+    
+  .gallery-big-img
+    margin-bottom: 10px
+    width: 100%
+    height: 300px
+  .gallery-small-img
+    margin-bottom: 15px
+    width: 100%
+    height: 125px
+    .swiper-button-white
+      width: 55px
+      height: 100%
+      &.swiper-button-prev
+        left: 0
+        right: auto
+        &::before
+          top: 40%
+          left: 35%
+          transform: rotate(-135deg)
+      &.swiper-button-next
+        left: auto
+        right: 0
+        &::before
+          top: 40%
+          right: 35%
+          left: auto
+          transform: rotate(-45deg)
+  
+  .block-gallery
+    margin-bottom: 40px
+  .block-videos
+    margin-bottom: 40px
+    &__video
+      margin-bottom: 20px
+      width: 100%
+    &__title
+      font-size: 14px
+      
+  .footer-logo
+    margin-bottom: 15px
+    &__img
+      margin-bottom: 5px
+    &__span
+      font-size: 26px
+      
+  .footer-contact__link
+    font-size: 16px
+    font-weight: 700
+    &:last-of-type
+      margin-bottom: 35px
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
+  .header-logo
+    z-index: 10
+    &__img
+      max-width: 35px
+    &__span
+      display: none
+  .header-menu
+    z-index: 5
+    padding-top: 52px
+    box-sizing: border-box
+    //max-height: calc(100vh - 52px)
+    max-height: 100vh
+    background-color: #fff
+    overflow: auto
+    &__link
+      padding-left: 15px
+  .header-callback
+    z-index: 10
+    &::before
+      border-top: 48px solid #ff2828
+      border-left: 20px solid transparent
+    .btn_transparent
+      font-size: 15px
+    .btn-mobile-menu
+      margin-right: 5px
+      
+  .main-page-swiper
+    max-height: 360px
+    &__img
+      max-height: 360px
+      
+  .screen-advantages__list .screen-advantages__list
+    column-count: 1
+  .screen-advantages .advantages-list-hor__li
+    width: 100%
+    
+  .overlay-form
+    padding: 20px 20px 20px
+    &__title
+      font-size: 16px
+    &__input, 
+    &__textarea
+      margin-bottom: 15px
+      padding: 10px
+      min-height: 44px
+    &__textarea
+      min-height: 100px
+    &__button
+      padding: 8px 5px
+      text-align: center
+      font-size: 18px
+      
+  .overlay-close
+    right: 8px
+    
+  .important-label
+    margin-bottom: 15px  
+    &__info
+      font-size: 14px
+      
+  .block-steps__steps
+    padding: 10px 0
+  .steps-list
+    &__li
+      margin-right: 0
+      width: 100%
+    &__title
+      width: calc(100% - 25px)
+    &__li:last-of-type .steps-list__title
+      width: 100%
+    
+  .gallery-big-img
+    height: 250px
+  .gallery-small-img
+    height: 100px
+    .swiper-button-white
+      width: 45px
 
-
+      
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
 	/**/
-
-
-/*==========  Mobile First  ==========*/
-
-/* Custom, iPhone Retina */
-@media only screen and (min-width : 320px)
-	/**/
-
-
-/* Extra Small Devices, Phones */
-@media only screen and (min-width : 480px)
-	/**/
-
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px)
-	/**/
-
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width : 992px)
-	/**/
-
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px)
-	/**/
-
