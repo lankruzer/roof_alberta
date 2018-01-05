@@ -137,3 +137,19 @@
   &:active,
   &:focus
     border-color: #535354
+  
+@mixin btn-read-more
+  display: inline-block
+  vertical-align: middle
+  padding: 5px 30px
+  box-sizing: border-box
+  text-align: center
+  @include font($family: corbel, $size: 20px, $color: $dark-gray)
+  background-color: #fff
+  border: 2px solid $dark-gray    
+  text-decoration: none
+  transition: 0.5s
+  &:hover
+    border-color: $red
+    color: $red
+    
